@@ -1,0 +1,29 @@
+:root{--ink:#16202e;--muted:#4a5565;--navy:#1f3a8a;--line:#d9dee7;--bg:#ffffff;--soft:#f3f5f9}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:var(--navy)}a:hover{color:#142761}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:8px;background:#fff;padding:8px 12px;z-index:10}
+header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:5}
+.bar{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:700;text-decoration:none;color:var(--ink);font-size:18px}
+.brand span{color:var(--muted);font-weight:500}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px}
+nav a{display:block;padding:10px 14px;border-radius:8px;text-decoration:none;color:var(--ink);font-weight:500;font-size:15px}
+nav a:hover{background:var(--soft)}
+nav a[aria-current="page"]{background:var(--navy);color:#fff}
+main{max-width:1080px;margin:0 auto;padding:40px 24px 64px}
+h1{font-size:40px;line-height:1.15;margin:0 0 8px}
+.lede{font-size:19px;color:var(--muted);margin:0 0 32px;max-width:720px}
+h2{font-size:24px;margin:40px 0 8px;padding-top:8px}
+.todo{color:var(--muted);font-style:italic}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:24px}
+.card{border:1px solid var(--line);border-radius:12px;padding:20px;text-decoration:none;color:var(--ink);display:block}
+.card:hover{border-color:var(--navy)}
+.card strong{display:block;font-size:18px;margin-bottom:6px;color:var(--navy)}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.toc{background:var(--soft);border-radius:12px;padding:16px 20px;margin:0 0 24px}
+.toc h2{margin:0 0 8px;font-size:16px;padding:0;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.toc ol{margin:0;padding-left:20px}
+.toc li{padding:2px 0}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .bar{justify-content:space-between}
