@@ -1,22 +1,133 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Annotated Bibliography | Daniel Admassu – Capstone</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Annotated Bibliography | Daniel Admassu – Capstone</title>
+  <style>
+    :root { --text:#1a1a1a; --bg:#ffffff; --accent:#4b2e83; --muted:#555; --line:#d6d6d6; --code-bg:#f2f2f2; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; font-size:1.0625rem; line-height:1.65; color:var(--text); background:var(--bg); }
+    .skip-link { position:absolute; left:-999px; top:0; background:var(--accent); color:#fff; padding:.5rem 1rem; z-index:10; }
+    .skip-link:focus { left:0; }
+    header { background:var(--accent); color:#fff; }
+    .header-inner, main, footer .footer-inner { max-width:56rem; margin:0 auto; padding:0 1.25rem; }
+    .site-name { display:block; padding:1rem 0 .5rem; color:#fff; font-weight:700; font-size:1.15rem; text-decoration:none; }
+    header nav ul { list-style:none; margin:0; padding:0 0 .75rem; display:flex; flex-wrap:wrap; gap:.25rem 1.25rem; }
+    header nav a { color:#fff; text-decoration:none; padding:.25rem 0; border-bottom:3px solid transparent; }
+    header nav a:hover, header nav a:focus { border-bottom-color:#fff; }
+    header nav a[aria-current="page"] { border-bottom-color:#b7a57a; font-weight:700; }
+    main { padding-top:2rem; padding-bottom:3rem; }
+    h1 { font-size:2.25rem; line-height:1.2; margin:0 0 .5rem; color:var(--accent); }
+    .intro { font-size:1.2rem; color:var(--muted); margin-top:0; }
+    h2 { font-size:1.6rem; color:var(--accent); margin:3rem 0 .75rem; padding-bottom:.35rem; border-bottom:2px solid var(--line); }
+    h3 { font-size:1.2rem; margin:2rem 0 .5rem; }
+    .toc { background:#f7f5fb; border-left:4px solid var(--accent); padding:1rem 1.5rem; margin:1.5rem 0 2rem; }
+    .toc h2 { margin:0 0 .5rem; font-size:1.15rem; border:0; padding:0; }
+    .toc ol { margin:0; padding-left:1.25rem; }
+    a { color:var(--accent); }
+    code { background:var(--code-bg); padding:.1rem .35rem; border-radius:3px; font-size:.92em; }
+    figure { margin:1.5rem 0; }
+    figure img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:4px; display:block; }
+    figcaption { font-size:.92rem; color:var(--muted); margin-top:.4rem; font-style:italic; }
+    table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.95rem; }
+    th, td { border:1px solid var(--line); padding:.45rem .65rem; text-align:left; }
+    th { background:#f7f5fb; }
+    footer { border-top:1px solid var(--line); color:var(--muted); font-size:.92rem; }
+    footer .footer-inner { padding-top:1.25rem; padding-bottom:1.25rem; }
+      .annotation { margin-bottom:.75rem; }
+    ul.bib { list-style:none; padding-left:0; }
+    ul.bib li { padding-left:2em; text-indent:-2em; margin-bottom:.6rem; overflow-wrap:anywhere; }
+  </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<header><div class="bar">
-<a class="brand" href="index.html">Daniel Admassu <span>· Virtual Enterprise Network</span></a>
-<nav aria-label="Portfolio"><ul><li><a href="index.html">Capstone</a></li><li><a href="users-perspective.html">User's Perspective</a></li><li><a href="developers-perspective.html">Developer's Perspective</a></li><li><a href="my-perspective.html">My Perspective</a></li><li><a href="annotated-bibliography.html" aria-current="page">Annotated Bibliography</a></li></ul></nav>
-</div></header>
-<main id="main">
-<h1>Annotated Bibliography</h1>
-<p class="lede">Resources that helped me learn, grouped by theme, with one annotation per theme.</p>
-<div class="toc"><h2>On this page</h2><ol><li><a href="#cisco-ios">Cisco IOS Configuration</a></li><li><a href="#lab-platforms">Lab Platforms and Virtualization</a></li><li><a href="#automation">Network Automation</a></li><li><a href="#routing-design">Network Design and Routing</a></li></ol></div><section id="cisco-ios"><h2>Cisco IOS Configuration</h2><p class="todo">Coming soon.</p></section><section id="lab-platforms"><h2>Lab Platforms and Virtualization</h2><p class="todo">Coming soon.</p></section><section id="automation"><h2>Network Automation</h2><p class="todo">Coming soon.</p></section><section id="routing-design"><h2>Network Design and Routing</h2><p class="todo">Coming soon.</p></section>
-</main>
-<footer><div class="bar"><span>CSS 497 Capstone · UW · 2026–2027</span><span><a href="index.html">Capstone home</a></span></div></footer>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <div class="header-inner">
+      <a class="site-name" href="index.html">Daniel Admassu · Virtual Enterprise Network</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Capstone</a></li>
+          <li><a href="users-perspective.html">User's Perspective</a></li>
+          <li><a href="developers-perspective.html">Developer's Perspective</a></li>
+          <li><a href="my-perspective.html">My Perspective</a></li>
+          <li><a href="annotated-bibliography.html" aria-current="page">Annotated Bibliography</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <h1>Annotated Bibliography</h1>
+    <p class="intro">Resources that helped me learn, grouped by theme, with one annotation per theme.</p>
+
+    <nav class="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#cisco-ios">Cisco IOS Configuration</a></li>
+        <li><a href="#lab-platforms">Lab Platforms and Virtualization</a></li>
+        <li><a href="#automation-monitoring">Network Automation and Monitoring</a></li>
+        <li><a href="#design-routing">Network Design and Routing</a></li>
+        <li><a href="#services">Network Services: DHCP and DNS</a></li>
+      </ol>
+    </nav>
+
+    <section id="cisco-ios">
+      <h2>Cisco IOS Configuration</h2>
+<p class="annotation">Before building anything in EVE-NG, I needed to know what each Cisco command actually did, not just how to type it. Jeremy's IT Lab's free CCNA videos on VLANs were my main teacher for the switching side of Module 1. Part 2 covered trunk configuration, changing the allowed VLAN list with <code>add</code> and <code>remove</code>, the native VLAN, and router-on-a-stick. The lab video let me practice those steps in Packet Tracer first. Part 3 introduced Layer 3 switches and SVIs, which explained the management interface on my switch and showed me an alternative to router-on-a-stick for larger networks. I took notes on each video and checked my understanding against <code>show</code> command output in my own lab.</p>
+<ul class="bib">
+  <li>Jeremy's IT Lab. (n.d.-a). <em>Free CCNA | VLANs (part 2) | Day 17 | CCNA 200-301 complete course</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=Jl9OOzNaBDU">https://www.youtube.com/watch?v=Jl9OOzNaBDU</a></li>
+  <li>Jeremy's IT Lab. (n.d.-b). <em>Free CCNA | VLANs (part 2) | Day 17 lab | CCNA 200-301 complete course</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=iRkFE_lpYgc">https://www.youtube.com/watch?v=iRkFE_lpYgc</a></li>
+  <li>Jeremy's IT Lab. (n.d.-c). <em>Free CCNA | VLANs (part 3) | Day 18 | CCNA 200-301 complete course</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=OkPB028l2eE">https://www.youtube.com/watch?v=OkPB028l2eE</a></li>
+</ul>
+    </section>
+
+    <section id="lab-platforms">
+      <h2>Lab Platforms and Virtualization</h2>
+<p class="annotation">The lab platform was the biggest obstacle of the quarter, and most of these resources came from troubleshooting it. I first read the GNS3 documentation for my original plan. When that plan failed, I compared alternatives, including FRRouting in Containerlab, and used Cisco Packet Tracer to practice my HQ design while I waited for a working lab. After my expert recommended EVE-NG, its Community Cookbook guided the installation, and its image-naming table and how-to guides explained why an image only appears in EVE-NG when its folder uses the right prefix and contains a <code>virtioa.qcow2</code> file. The Broadcom and Microsoft articles explained why Windows Virtualization-Based Security and Memory Integrity block nested virtualization in VMware, which is what finally explained the error on the loaner laptop.</p>
+<ul class="bib">
+  <li>Broadcom. (n.d.). <em>Virtualized Intel VT-x/EPT is not supported on this platform in VMware Workstation</em> (Knowledge Base Article 389469). <a href="https://knowledge.broadcom.com/external/article/389469">https://knowledge.broadcom.com/external/article/389469</a></li> <!-- ADDED -->
+  <li>Cisco Networking Academy. (n.d.). <em>Getting started with Cisco Packet Tracer</em> [Online course]. <a href="https://www.netacad.com/courses/getting-started-cisco-packet-tracer">https://www.netacad.com/courses/getting-started-cisco-packet-tracer</a></li> <!-- ADDED: check the exact course page you used to download Packet Tracer -->
+  <li>Containerlab. (n.d.). <em>FRR</em> [Lab example]. <a href="https://containerlab.dev/lab-examples/frr01">https://containerlab.dev/lab-examples/frr01</a></li> <!-- ADDED -->
+  <li>EVE-NG Ltd. (n.d.-a). <em>How to add Cisco ASAv</em>. <a href="https://www.eve-ng.net/index.php/documentation/howtos/howto-add-cisco-asav/">https://www.eve-ng.net/index.php/documentation/howtos/howto-add-cisco-asav/</a></li> <!-- ADDED -->
+  <li>EVE-NG Ltd. (n.d.-b). <em>How to add Cisco vIOS from VIRL</em>. <a href="https://www.eve-ng.net/index.php/documentation/howtos/howto-add-cisco-vios-from-virl/">https://www.eve-ng.net/index.php/documentation/howtos/howto-add-cisco-vios-from-virl/</a></li> <!-- ADDED -->
+  <li>EVE-NG Ltd. (n.d.-c). <em>QEMU image namings</em>. <a href="https://www.eve-ng.net/index.php/documentation/qemu-image-namings">https://www.eve-ng.net/index.php/documentation/qemu-image-namings</a></li> <!-- ADDED -->
+  <li>EVE-NG Ltd. (2024). <em>EVE-NG Community cookbook</em> (Version 6.2). <a href="https://www.eve-ng.net/wp-content/uploads/2024/05/EVE-CE-BOOK-6.2-2024.pdf">https://www.eve-ng.net/wp-content/uploads/2024/05/EVE-CE-BOOK-6.2-2024.pdf</a></li> <!-- ADDED -->
+  <li>GNS3. (n.d.). <em>GNS3 documentation</em>. <a href="https://docs.gns3.com/docs">https://docs.gns3.com/docs</a></li>
+  <li>Microsoft. (n.d.). <em>Enable virtualization-based protection of code integrity</em>. Microsoft Learn. <a href="https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity">https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity</a></li> <!-- ADDED -->
+</ul>
+    </section>
+
+    <section id="automation-monitoring">
+      <h2>Network Automation and Monitoring</h2>
+<p class="annotation">These resources support the second half of the project: managing the network with code and watching its health. The Netmiko documentation is my reference for connecting to Cisco devices over SSH from Python, sending commands, and reading their output, which is the foundation of my show-command, backup, and check scripts. The Grafana and Prometheus getting-started guide shows how metrics are collected and displayed on a dashboard. It is the starting point for the monitoring dashboard planned for next quarter, which my stakeholder rated as one of the two most important features.</p>
+<ul class="bib">
+  <li>Byers, K. (n.d.). <em>Netmiko documentation</em>. <a href="https://ktbyers.github.io/netmiko/">https://ktbyers.github.io/netmiko/</a></li>
+  <li>Grafana Labs. (n.d.). <em>Get started with Grafana and Prometheus</em>. Grafana documentation. <a href="https://grafana.com/docs/grafana/latest/fundamentals/getting-started/first-dashboards/get-started-grafana-prometheus/">https://grafana.com/docs/grafana/latest/fundamentals/getting-started/first-dashboards/get-started-grafana-prometheus/</a></li>
+</ul>
+    </section>
+
+    <section id="design-routing">
+      <h2>Network Design and Routing</h2>
+<p class="annotation">I used these resources to make sure the design rested on solid fundamentals before I configured anything. Cisco's Networking Basics course refreshed addressing, subnetting, and how devices on different networks reach each other through a router, the ideas behind my VLAN-per-subnet plan and the /30 WAN links. Practical Networking's article on routing between VLANs compared the options, from one router interface per VLAN, to router-on-a-stick, to a Layer 3 switch. It helped me understand why router-on-a-stick fits a small office like my HQ and where it stops scaling.</p>
+<ul class="bib">
+  <li>Cisco Networking Academy. (n.d.). <em>Networking basics</em> [Online course]. <a href="https://www.netacad.com/courses/networking-basics">https://www.netacad.com/courses/networking-basics</a></li>
+  <li>Practical Networking. (n.d.). <em>Routing between VLANs</em>. <a href="https://www.practicalnetworking.net/stand-alone/routing-between-vlans/">https://www.practicalnetworking.net/stand-alone/routing-between-vlans/</a></li>
+</ul>
+    </section>
+
+    <section id="services">
+      <h2>Network Services: DHCP and DNS</h2>
+<p class="annotation">These resources prepare Module 3, where a Linux server provides addresses and name resolution for both offices. Ubuntu's server documentation explains how DHCP hands out addresses and how it is set up on Ubuntu Server, the operating system my services server will run. Cloudflare's explanation of DNS walks through how a name is resolved step by step, which I need to understand before running my own DNS server. Together they also explain why DHCP needs a relay (<code>ip helper-address</code>) on the router before branch devices can reach a server at HQ.</p>
+<ul class="bib">
+  <li>Canonical. (n.d.). <em>About DHCP</em>. Ubuntu Server documentation. <a href="https://ubuntu.com/server/docs/explanation/networking/about-dhcp/">https://ubuntu.com/server/docs/explanation/networking/about-dhcp/</a></li>
+  <li>Cloudflare. (n.d.). <em>What is DNS? | How DNS works</em>. Cloudflare Learning Center. <a href="https://www.cloudflare.com/learning/dns/what-is-dns/">https://www.cloudflare.com/learning/dns/what-is-dns/</a></li>
+</ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">CSS 497 Capstone · UW · 2026–2027 · <a href="index.html">Capstone home</a></div>
+  </footer>
 </body>
 </html>

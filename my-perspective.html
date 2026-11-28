@@ -1,22 +1,130 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>My Perspective | Daniel Admassu – Capstone</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Perspective | Daniel Admassu – Capstone</title>
+  <style>
+    :root { --text:#1a1a1a; --bg:#ffffff; --accent:#4b2e83; --muted:#555; --line:#d6d6d6; --code-bg:#f2f2f2; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; font-size:1.0625rem; line-height:1.65; color:var(--text); background:var(--bg); }
+    .skip-link { position:absolute; left:-999px; top:0; background:var(--accent); color:#fff; padding:.5rem 1rem; z-index:10; }
+    .skip-link:focus { left:0; }
+    header { background:var(--accent); color:#fff; }
+    .header-inner, main, footer .footer-inner { max-width:56rem; margin:0 auto; padding:0 1.25rem; }
+    .site-name { display:block; padding:1rem 0 .5rem; color:#fff; font-weight:700; font-size:1.15rem; text-decoration:none; }
+    header nav ul { list-style:none; margin:0; padding:0 0 .75rem; display:flex; flex-wrap:wrap; gap:.25rem 1.25rem; }
+    header nav a { color:#fff; text-decoration:none; padding:.25rem 0; border-bottom:3px solid transparent; }
+    header nav a:hover, header nav a:focus { border-bottom-color:#fff; }
+    header nav a[aria-current="page"] { border-bottom-color:#b7a57a; font-weight:700; }
+    main { padding-top:2rem; padding-bottom:3rem; }
+    h1 { font-size:2.25rem; line-height:1.2; margin:0 0 .5rem; color:var(--accent); }
+    .intro { font-size:1.2rem; color:var(--muted); margin-top:0; }
+    h2 { font-size:1.6rem; color:var(--accent); margin:3rem 0 .75rem; padding-bottom:.35rem; border-bottom:2px solid var(--line); }
+    h3 { font-size:1.2rem; margin:2rem 0 .5rem; }
+    .toc { background:#f7f5fb; border-left:4px solid var(--accent); padding:1rem 1.5rem; margin:1.5rem 0 2rem; }
+    .toc h2 { margin:0 0 .5rem; font-size:1.15rem; border:0; padding:0; }
+    .toc ol { margin:0; padding-left:1.25rem; }
+    a { color:var(--accent); }
+    code { background:var(--code-bg); padding:.1rem .35rem; border-radius:3px; font-size:.92em; }
+    figure { margin:1.5rem 0; }
+    figure img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:4px; display:block; }
+    figcaption { font-size:.92rem; color:var(--muted); margin-top:.4rem; font-style:italic; }
+    table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.95rem; }
+    th, td { border:1px solid var(--line); padding:.45rem .65rem; text-align:left; }
+    th { background:#f7f5fb; }
+    footer { border-top:1px solid var(--line); color:var(--muted); font-size:.92rem; }
+    footer .footer-inner { padding-top:1.25rem; padding-bottom:1.25rem; }
+      .annotation { margin-bottom:.75rem; }
+    ul.bib { list-style:none; padding-left:0; }
+    ul.bib li { padding-left:2em; text-indent:-2em; margin-bottom:.6rem; overflow-wrap:anywhere; }
+  </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<header><div class="bar">
-<a class="brand" href="index.html">Daniel Admassu <span>· Virtual Enterprise Network</span></a>
-<nav aria-label="Portfolio"><ul><li><a href="index.html">Capstone</a></li><li><a href="users-perspective.html">User's Perspective</a></li><li><a href="developers-perspective.html">Developer's Perspective</a></li><li><a href="my-perspective.html" aria-current="page">My Perspective</a></li><li><a href="annotated-bibliography.html">Annotated Bibliography</a></li></ul></nav>
-</div></header>
-<main id="main">
-<h1>My Perspective</h1>
-<p class="lede">A reflection on what this capstone taught me about myself.</p>
-<div class="toc"><h2>On this page</h2><ol><li><a href="#theme-1">Theme 1</a></li><li><a href="#theme-2">Theme 2</a></li><li><a href="#theme-3">Theme 3</a></li><li><a href="#theme-4">Theme 4</a></li><li><a href="#theme-5">Theme 5</a></li></ol></div><section id="theme-1"><h2>Theme 1</h2><p class="todo">Coming soon.</p></section><section id="theme-2"><h2>Theme 2</h2><p class="todo">Coming soon.</p></section><section id="theme-3"><h2>Theme 3</h2><p class="todo">Coming soon.</p></section><section id="theme-4"><h2>Theme 4</h2><p class="todo">Coming soon.</p></section><section id="theme-5"><h2>Theme 5</h2><p class="todo">Coming soon.</p></section>
-</main>
-<footer><div class="bar"><span>CSS 497 Capstone · UW · 2026–2027</span><span><a href="index.html">Capstone home</a></span></div></footer>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <div class="header-inner">
+      <a class="site-name" href="index.html">Daniel Admassu · Virtual Enterprise Network</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Capstone</a></li>
+          <li><a href="users-perspective.html">User's Perspective</a></li>
+          <li><a href="developers-perspective.html">Developer's Perspective</a></li>
+          <li><a href="my-perspective.html" aria-current="page">My Perspective</a></li>
+          <li><a href="annotated-bibliography.html">Annotated Bibliography</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <h1>My Perspective</h1>
+    <p class="intro">A reflection on what this capstone taught me about myself.</p>
+
+    <nav class="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#harder-path">Choosing the Harder Path Into Networking</a></li>
+        <li><a href="#lost-weeks">Three Weeks Lost to a Laptop</a></li>
+        <li><a href="#finding-people">Finding People Who Know More Than I Do</a></li>
+        <li><a href="#typing-commands">Typing Every Command</a></li>
+        <li><a href="#schedule-reality">When the Schedule Stopped Matching Reality</a></li>
+        <li><a href="#job-prep">Preparing for the Job, Not Just the Grade</a></li>
+      </ol>
+    </nav>
+
+    <section id="harder-path">
+      <h2>Choosing the Harder Path Into Networking</h2>
+<!-- TODO: this theme guesses at your backstory (why you pivoted, how it felt). Rewrite the first and third paragraphs with your real reasons and moments. -->
+<p>I started my degree on the general computer science track, and for most of it I assumed I would end up writing software. Partway through, I realized the courses I looked forward to were the ones about how data actually moves between machines: addressing, routing, security. I decided to pivot toward network engineering and network security, even though it meant I came into my capstone with less hands-on networking experience than I wanted.</p>
+<p>That decision shaped the project. I could have picked something closer to what I already knew, such as an application with a networking feature, but I wanted a project that would look like the work a network engineer does: designing VLANs, routing between offices, and automating the boring parts with Python. When a classmate at my first standup suggested using FRRouting instead of Cisco, I understood the logic, since learning one network operating system makes the next one easier. I still pushed to keep Cisco IOS as my main platform, because Cisco is what shows up in the job postings I am applying to.</p>
+<p>Choosing a project I wasn't already good at meant I spent a lot of the quarter as a beginner. Some weeks that was uncomfortable, especially when classmates were deep into building and I was still trying to get a lab to start. But being a beginner on purpose is also what kept me motivated. Every small win, like two routers pinging each other, was something I didn't know how to do a few weeks earlier.</p>
+<p>What I learned about myself is that I am motivated more by where a project leads than by how comfortable it feels. I am willing to start behind if the work points toward the career I want, and that is something I can bring into an entry-level role, where I will be the least experienced person on the team for a while.</p>
+    </section>
+
+    <section id="lost-weeks">
+      <h2>Three Weeks Lost to a Laptop</h2>
+<p>In the second week of the quarter, I found out that my laptop, an ARM-based machine, could not run the Cisco images my whole project depended on. I didn't fully understand the problem at first. I assumed any modern laptop could run a virtual lab, so I spent time trying workarounds before accepting that the hardware itself was the issue.</p>
+<p>Fixing it turned into a chain of problems. The department loaner laptop could only download software on the campus network, and I couldn't get to campus that week. When I finally had the software, the loaner's Windows security settings blocked the virtualization EVE-NG needs. I ended up moving the lab to a different laptop entirely. By the time my first two virtual routers pinged each other in Week 5, I had lost almost three weeks of my schedule, and the relief I felt was mostly about finally being able to start the project I had planned.</p>
+<p>Looking back, the biggest delay wasn't technical. It was how long I waited before asking for help. When I did ask, things moved fast: my instructor had already arranged a loaner with the department chair, CSS IT opened a ticket the same week, and my expert offered the Cisco images I couldn't get on my own. In my Week 7 meeting, my instructor told me that asking for the loaner was the right call, because employees need to ask for the resources they need instead of staying stuck. That changed how I saw it. Asking wasn't admitting I couldn't do the work; it was part of doing the work.</p>
+<p>I learned that my instinct is to try to solve problems alone for too long, and that this instinct costs me time. Now, when I hit a blocker, I give myself a limit, and once I reach it I explain the problem clearly to someone who can help. I also learned to check requirements before committing to a plan. That is why the hardware requirements are now the first thing in my README.</p>
+    </section>
+
+    <section id="finding-people">
+      <h2>Finding People Who Know More Than I Do</h2>
+<p>The capstone required me to find my own industry expert and stakeholders, and at the start I didn't have a professional network in networking at all. I made a list of possible experts and stakeholder groups and started reaching out, not knowing who would answer.</p>
+<p>My first expert meeting was with Glenn, at a coffee shop, for about an hour. I came in ready to explain my plan and my lab problems. I left with a different project. He suggested EVE-NG, offered the Cisco images I had no legal way to get, offered to help debug remotely, and told me to add security: ACLs, a branch firewall, and VPNs. The idea that stuck with me most was that building a working network is not enough. It also has to be secure. That fits my goal of becoming a network security engineer better than my original plan did.</p>
+<p>Stakeholders were harder. Rene from CSS IT agreed to be my first stakeholder quickly, but getting survey responses has been slow, and I currently have one. That one response was still useful. It told me the features a professional with more than ten years of experience cares about most, and it pointed out something I had missed completely: redundancy and failover. I learned that feedback from one person who knows the field can change the plan, but it can't stand in for a real sample, so I still need to keep reaching out.</p>
+<p>This part of the capstone showed me that I am more comfortable asking strangers for help than I expected, as long as I come prepared with a clear explanation of what I'm doing and what I need. It also showed me that the most valuable thing an expert gives isn't an answer to my question, but the questions I didn't know to ask. That is a skill I want to keep using as I build a professional network.</p>
+    </section>
+
+    <section id="typing-commands">
+      <h2>Typing Every Command</h2>
+<p>When I finally started building in EVE-NG, I made a rule for myself: no copying and pasting configurations. I typed every command, and before moving on I made sure I could explain what each line did. It was slower, and there were nights when pasting a finished config would have saved an hour.</p>
+<p>The rule paid off in ways I didn't expect. Typing commands meant I made mistakes, and the mistakes taught me more than the correct commands did. I learned to read the <code>^</code> marker in IOS error messages to find exactly where I went wrong. I learned that <code>switchport trunk allowed vlan</code> replaces the list instead of adding to it, a mistake that could take down a real network. Later, I removed a VLAN from the trunk on purpose to see what a failure looks like, and I already understood why only that VLAN broke.</p>
+<p>I also started writing down what I expected before running each test. When the pings between VLANs came back with a TTL of 63 instead of 64, I knew the traffic had crossed exactly one router, and I knew it because I had predicted it, not because a guide told me. Predicting first turned testing from checking boxes into proving I understood the network.</p>
+<p>I learned that I understand things best when I build them with my own hands and make my own mistakes, and that I value understanding over speed. In a job, there will be pressure to just make things work. I now know that taking the time to understand why something works is what lets me fix it when it breaks, and I want to keep that habit even when I'm under time pressure.</p>
+    </section>
+
+    <section id="schedule-reality">
+      <h2>When the Schedule Stopped Matching Reality</h2>
+<p>My design specification had a detailed week-by-week schedule, with a new module finished almost every week. By Week 4, the hardware problems had made that schedule unrealistic, and every week I stayed on it, I fell further behind on paper.</p>
+<p>I switched to one-week sprints on a GitHub Projects board and planned only the next week at a time, until I knew my real pace. This helped a lot. Each status report became a small checkpoint: what I finished, what moved, and why. Smaller tasks were easier to start and easier to finish, and I stopped feeling like I was failing a plan that no longer made sense.</p>
+<p>But short sprints created their own problem. Planning one week at a time made it easy to lose sight of the overall deadline. In Week 6, I took an excused week off from the project to study, and in Week 8, I spent the whole week on career preparation assignments I had postponed since Week 5. Both were reasonable choices, but together they meant I made no lab progress for two weeks, and the project is now about two weeks behind my original plan. My instructor encouraged me to keep experimenting with scheduling methods until I find one that works, which made me see scheduling as a skill I can improve, not a test I passed or failed.</p>
+<p>I learned that I work best with short, concrete goals, but that I also need to check regularly where those weeks are taking me overall. I also learned that when I postpone something, it doesn't disappear. It comes back later and competes with everything else. Next quarter, I plan to keep weekly sprints but add a monthly check against the final deliverables, so short-term planning doesn't hide a long-term problem.</p>
+    </section>
+
+    <section id="job-prep">
+      <h2>Preparing for the Job, Not Just the Grade</h2>
+<p>The career preparation assignments were the part of the course I put off the longest. In Week 8, I finally did several at once: updating my resume, writing interview questions, building a salary budget, and planning interview outfits.</p>
+<p>Updating my resume was the most surprising. I realized I hadn't included my capstone, even though it is one of my strongest networking experiences. I had been thinking of the project as schoolwork instead of as evidence of what I can do. Using Jobscan and the Career Services guides, I also learned that resumes need to be tailored to each job, using the keywords from the posting.</p>
+<p>The salary budget changed how I think about job offers. Working out the take-home pay for an $80,000 network engineer position showed me how much taxes and living costs reduce a salary, and that comparing offers by take-home pay is more useful than comparing the number in the job ad. Writing interview questions for different interviewers made me think about what I want to learn from an employer, not just what they want to learn from me.</p>
+<p>I learned that I tend to treat career preparation as something separate from my "real" work, when it actually depends on it. Each piece of this project, from the lab to this portfolio, is something I can show an employer. I am now approaching the rest of the capstone with that in mind: building it well enough that I would be proud to walk an interviewer through it.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">CSS 497 Capstone · UW · 2026–2027 · <a href="index.html">Capstone home</a></div>
+  </footer>
 </body>
 </html>

@@ -1,22 +1,309 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Developer's Perspective | Daniel Admassu – Capstone</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Developer's Perspective | Daniel Admassu – Capstone</title>
+  <style>
+    :root { --text:#1a1a1a; --bg:#ffffff; --accent:#4b2e83; --muted:#555; --line:#d6d6d6; --code-bg:#f2f2f2; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; font-size:1.0625rem; line-height:1.65; color:var(--text); background:var(--bg); }
+    .skip-link { position:absolute; left:-999px; top:0; background:var(--accent); color:#fff; padding:.5rem 1rem; z-index:10; }
+    .skip-link:focus { left:0; }
+    header { background:var(--accent); color:#fff; }
+    .header-inner, main, footer .footer-inner { max-width:56rem; margin:0 auto; padding:0 1.25rem; }
+    .site-name { display:block; padding:1rem 0 .5rem; color:#fff; font-weight:700; font-size:1.15rem; text-decoration:none; }
+    nav ul { list-style:none; margin:0; padding:0 0 .75rem; display:flex; flex-wrap:wrap; gap:.25rem 1.25rem; }
+    nav a { color:#fff; text-decoration:none; padding:.25rem 0; border-bottom:3px solid transparent; }
+    nav a:hover, nav a:focus { border-bottom-color:#fff; }
+    nav a[aria-current="page"] { border-bottom-color:#b7a57a; font-weight:700; }
+    main { padding-top:2rem; padding-bottom:3rem; }
+    h1 { font-size:2.25rem; line-height:1.2; margin:0 0 .5rem; color:var(--accent); }
+    .intro { font-size:1.2rem; color:var(--muted); margin-top:0; }
+    h2 { font-size:1.6rem; color:var(--accent); margin:3rem 0 .75rem; padding-bottom:.35rem; border-bottom:2px solid var(--line); }
+    h3 { font-size:1.2rem; margin:2rem 0 .5rem; }
+    .toc { background:#f7f5fb; border-left:4px solid var(--accent); padding:1rem 1.5rem; margin:1.5rem 0 2rem; }
+    .toc h2 { margin:0 0 .5rem; font-size:1.15rem; border:0; padding:0; }
+    .toc ol { margin:0; padding-left:1.25rem; }
+    a { color:var(--accent); }
+    code { background:var(--code-bg); padding:.1rem .35rem; border-radius:3px; font-size:.92em; }
+    figure { margin:1.5rem 0; }
+    figure img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:4px; display:block; }
+    figcaption { font-size:.92rem; color:var(--muted); margin-top:.4rem; font-style:italic; }
+    table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.95rem; }
+    th, td { border:1px solid var(--line); padding:.45rem .65rem; text-align:left; }
+    th { background:#f7f5fb; }
+    footer { border-top:1px solid var(--line); color:var(--muted); font-size:.92rem; }
+    footer .footer-inner { padding-top:1.25rem; padding-bottom:1.25rem; }
+  </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<header><div class="bar">
-<a class="brand" href="index.html">Daniel Admassu <span>· Virtual Enterprise Network</span></a>
-<nav aria-label="Portfolio"><ul><li><a href="index.html">Capstone</a></li><li><a href="users-perspective.html">User's Perspective</a></li><li><a href="developers-perspective.html" aria-current="page">Developer's Perspective</a></li><li><a href="my-perspective.html">My Perspective</a></li><li><a href="annotated-bibliography.html">Annotated Bibliography</a></li></ul></nav>
-</div></header>
-<main id="main">
-<h1>Developer's Perspective</h1>
-<p class="lede">How the network was put together, from the lab platform up to automation, and how each part evolved.</p>
-<div class="toc"><h2>On this page</h2><ol><li><a href="#lab-platform">Lab Platform and Hardware</a></li><li><a href="#network-design">Network Design and Architecture</a></li><li><a href="#hq-network">HQ Network: VLANs and Inter-VLAN Routing</a></li><li><a href="#branch-wan">Branch Office and WAN Routing (OSPF)</a></li><li><a href="#services">Network Services: DHCP and DNS</a></li><li><a href="#automation">Automation with Python and Netmiko</a></li><li><a href="#testing">Testing and Verification</a></li><li><a href="#feedback">Stakeholder and Expert Feedback</a></li><li><a href="#schedule">Planning and Schedule</a></li><li><a href="#next-steps">Next Steps</a></li></ol></div><section id="lab-platform"><h2>Lab Platform and Hardware</h2><p class="todo">Coming soon.</p></section><section id="network-design"><h2>Network Design and Architecture</h2><p class="todo">Coming soon.</p></section><section id="hq-network"><h2>HQ Network: VLANs and Inter-VLAN Routing</h2><p class="todo">Coming soon.</p></section><section id="branch-wan"><h2>Branch Office and WAN Routing (OSPF)</h2><p class="todo">Coming soon.</p></section><section id="services"><h2>Network Services: DHCP and DNS</h2><p class="todo">Coming soon.</p></section><section id="automation"><h2>Automation with Python and Netmiko</h2><p class="todo">Coming soon.</p></section><section id="testing"><h2>Testing and Verification</h2><p class="todo">Coming soon.</p></section><section id="feedback"><h2>Stakeholder and Expert Feedback</h2><p class="todo">Coming soon.</p></section><section id="schedule"><h2>Planning and Schedule</h2><p class="todo">Coming soon.</p></section><section id="next-steps"><h2>Next Steps</h2><p class="todo">Coming soon.</p></section>
-</main>
-<footer><div class="bar"><span>CSS 497 Capstone · UW · 2026–2027</span><span><a href="index.html">Capstone home</a></span></div></footer>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <div class="header-inner">
+      <a class="site-name" href="index.html">Daniel Admassu · Virtual Enterprise Network</a>
+      <nav aria-label="Main">
+        <ul>
+        <li><a href="index.html">Capstone</a></li>
+        <li><a href="users-perspective.html">User's Perspective</a></li>
+        <li><a href="developers-perspective.html" aria-current="page">Developer's Perspective</a></li>
+        <li><a href="my-perspective.html">My Perspective</a></li>
+        <li><a href="annotated-bibliography.html">Annotated Bibliography</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <h1>Developer's Perspective</h1>
+    <p class="intro">How the network was put together, from the lab platform up to automation, and how each part evolved.</p>
+
+    <nav class="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#lab-platform">Lab Platform and Hardware</a></li>
+        <li><a href="#network-design">Network Design and Architecture</a></li>
+        <li><a href="#hq-network">HQ Network: VLANs and Inter-VLAN Routing</a></li>
+        <li><a href="#branch-wan">Branch Office and WAN Routing (OSPF)</a></li>
+        <li><a href="#services">Network Services: DHCP and DNS</a></li>
+        <li><a href="#automation">Automation with Python and Netmiko</a></li>
+        <li><a href="#testing">Testing and Verification</a></li>
+        <li><a href="#feedback">Stakeholder and Expert Feedback</a></li>
+        <li><a href="#schedule">Planning and Schedule</a></li>
+        <li><a href="#next-steps">Next Steps</a></li>
+      </ol>
+    </nav>
+
+    <section id="lab-platform">
+      <h2>Lab Platform and Hardware</h2>
+<p>Everything in this project runs on virtual Cisco devices, so the lab platform had to work before any networking could start. Getting it to work took the first five weeks, and the platform changed three times along the way.</p>
+
+<h3>Starting point: GNS3 on an ARM laptop</h3>
+<p>My design spec planned to run GNS3 on my own laptop, a Dell XPS 13 with a Snapdragon X Elite processor. During setup I found that Cisco's virtual router and switch images (IOSv and IOSvL2) are built for x86 processors and cannot run on ARM hardware. This was the project's first major blocker. It sent me back to research before I could configure a single device.</p>
+
+<h3>Comparing the options</h3>
+<p>I compared four ways to get an x86 lab: a borrowed x86 laptop, a cloud virtual machine, Cisco Modeling Labs (CML), and FRRouting running in Containerlab. I chose a loaner laptop from the CSS department because it kept my Cisco-based plan, which matches the jobs I am applying for, at no cost. FRRouting stayed as the backup. A classmate at Standup 1 also suggested FRRouting, pointing out that learning one network operating system makes it easier to learn others.</p>
+<!-- TODO: add your Week 3 lab-platform comparison table or screenshot here -->
+
+<h3>Switching to EVE-NG and real Cisco images</h3>
+<p>Two problems remained: I had no legal source for Cisco images, and the loaner could only download software on the campus network. My expert, Glenn, solved the first problem. He recommended EVE-NG over GNS3 as the platform network professionals use for practice labs, and he provided IOSv, IOSvL2, and ASAv (firewall) images from his Cisco Modeling Labs access. While I waited for campus access, I built the HQ design in Cisco Packet Tracer on my own laptop. That showed the design itself was not tied to any one platform.</p>
+<!-- TODO: add the Packet Tracer topology screenshot from your Week 4 report -->
+
+<h3>The virtualization block and the final setup</h3>
+<p>On the loaner, EVE-NG would not start its nodes. EVE-NG runs inside VMware, and its Cisco nodes are virtual machines inside that VM, so the lab needs <em>nested virtualization</em>: the CPU's VT-x feature has to pass through to the inner VM. Windows security features (Virtualization-Based Security, Memory Integrity, and Hyper-V) hold on to VT-x and block nested virtualization, and the loaner's managed settings would not let me turn them off. I moved the lab to an MSI GS66 laptop (Intel Core i9, 32 GB RAM) and added a separate "Lab mode" boot entry with those features turned off. Then I installed VMware Workstation Pro and EVE-NG Community and uploaded the three images. EVE-NG only recognizes an image when its folder name starts with the right prefix (<code>vios</code>, <code>viosl2</code>, <code>asav</code>) and contains a single <code>virtioa.qcow2</code> disk file.</p>
+<p>I wrote these hardware requirements at the top of my README, so the next person can check their computer before losing weeks the way I did.</p>
+<!-- TODO: add the README "Lab Setup" screenshot and the /opt/unetlab/addons/qemu folder listing from your Week 5 report -->
+
+<h3>Checkpoint 0: proving the platform works</h3>
+<figure>
+  <img src="images/dev/checkpoint0-r2-ping.png" alt="Console of router R2: hostname set, GigabitEthernet0/0 given 10.0.0.2 with a 255.255.255.252 mask, configuration saved, and a ping to 10.0.0.1 succeeding 5 out of 5.">
+  <figcaption>Checkpoint 0: two IOSv routers on a /30 link.</figcaption>
+</figure>
+<p>The first test was the smallest possible network: two IOSv routers connected Gi0/0 to Gi0/0, with 10.0.0.1/30 and 10.0.0.2/30. A /30 subnet has exactly two usable addresses, which is why it's used for router-to-router links like the WAN links in this design. A 5/5 ping meant nested virtualization, the images, and EVE-NG's virtual cabling all worked. Every later module builds on this.</p>
+
+<h3>Maintaining the platform</h3>
+<figure>
+  <img src="images/dev/eve-ng-apt-update.png" alt="EVE-NG VM terminal showing apt update, three upgradable packages (distro-info, python3-distro-info, snapd), and an 'Unable to locate package' error from a mistyped package name.">
+  <figcaption>Updating the EVE-NG VM before Module 1.</figcaption>
+</figure>
+<p>Before building Module 1, I updated the EVE-NG VM. Three packages stayed "upgradable" because of Ubuntu's phased updates, not because anything was broken. The error in the screenshot came from my own typo in a package name. The update also restarted the tomcat9 web service, and that broke the browser (HTML5) console's login session. Logging out of the web interface and back in fixed it, and the fix is now in my troubleshooting table. I now take a VMware snapshot before any update.</p>
+    </section>
+
+    <section id="network-design">
+      <h2>Network Design and Architecture</h2>
+<p>The network models a small company: a headquarters office (HQ) and a branch office, connected through a simulated internet service provider (ISP). The design separates traffic into VLANs at each site, routes between the sites with OSPF, and keeps a management network for automation.</p>
+
+<h3>The original design</h3>
+<figure>
+  <img src="images/dev/design-diagram-v1.png" alt="Original architecture diagram: an HQ router, HQ switch, DNS/DHCP server, HQ PCs and automation PC at headquarters; WAN links from the HQ router to an ISP router and from the ISP router to a branch router, branch switch, and branch PCs.">
+  <figcaption>Version 1 of the architecture, from the design specification.</figcaption>
+</figure>
+<p>The first diagram shows the main parts. Each office has a router and a switch, a simulated ISP router sits between the offices, one server at HQ provides DHCP and DNS for both sites, and an automation PC runs the Python scripts. It shows <em>what</em> connects to what, but not the VLANs, addressing, or security that an engineer would need to build it.</p>
+
+<h3>VLAN and IP addressing plan</h3>
+<p>The HQ plan uses one VLAN per type of device, with the VLAN number built into the subnet (VLAN 10 → 10.1.10.0/24). Anyone reading a config can tell which VLAN an address belongs to.</p>
+<table>
+  <thead><tr><th>VLAN</th><th>Name</th><th>Purpose</th><th>Subnet</th><th>Gateway</th></tr></thead>
+  <tbody>
+    <tr><td>10</td><td>USERS</td><td>Employee computers</td><td>10.1.10.0/24</td><td>10.1.10.1</td></tr>
+    <tr><td>20</td><td>SERVERS</td><td>DHCP/DNS server</td><td>10.1.20.0/24</td><td>10.1.20.1</td></tr>
+    <tr><td>30</td><td>VOICE</td><td>IP phones</td><td>10.1.30.0/24</td><td>10.1.30.1</td></tr>
+    <tr><td>40</td><td>GUEST</td><td>Visitors</td><td>10.1.40.0/24</td><td>10.1.40.1</td></tr>
+    <tr><td>99</td><td>MGMT</td><td>Device management and automation</td><td>10.1.99.0/24</td><td>10.1.99.1</td></tr>
+    <tr><td>999</td><td>NATIVE</td><td>Unused native VLAN for trunks</td><td>none</td><td>none</td></tr>
+  </tbody>
+</table>
+<p>Other design choices that carry through every module:</p>
+<ul>
+  <li><strong>Native VLAN 999 with no devices.</strong> Trunks send native-VLAN traffic untagged, and the default (VLAN 1) can be abused in VLAN-hopping attacks. Using an empty VLAN means stray untagged frames land nowhere.</li>
+  <li><strong>A dedicated management VLAN (99).</strong> The switch's management address and the automation PC live here, apart from user traffic.</li>
+  <li><strong>A loopback address on each router</strong> (10.255.0.1 on HQ-R1), planned as the OSPF router ID. A loopback never goes down, so the router ID stays stable.</li>
+  <li><strong>/30 subnets on WAN links,</strong> since each link only connects two routers.</li>
+</ul>
+
+<h3>How expert feedback changed the design</h3>
+<p>After reviewing the design, Glenn pointed out that a working network is not finished until it is secure. He suggested ACLs between VLANs (for example, keeping the guest VLAN away from the servers), a firewall at the branch, sending branch internet traffic through HQ, and site-to-site and remote-access VPNs. Most of these fit the second quarter, so the network gets built first and then secured. The ASAv firewall image he provided makes the branch firewall possible.</p>
+<!-- TODO: draw an updated Version 2 diagram in draw.io (EVE-NG device names, VLANs, subnets, the branch firewall, the automation PC on VLAN 99) and add it here. Also fix the spelling in v1 if you redraw it: "Roueter", "Offoce". -->
+    </section>
+
+    <section id="hq-network">
+      <h2>HQ Network: VLANs and Inter-VLAN Routing</h2>
+<p>Module 1 builds the headquarters network: one router (HQ-R1), one switch (HQ-SW1), and test PCs in three VLANs. The switch keeps the VLANs separate, and the router routes between them over a single trunk link, a design called <em>router-on-a-stick</em>. I typed every command instead of pasting it, so I would understand what each line does.</p>
+
+<h3>Access ports: putting devices into VLANs</h3>
+<figure>
+  <img src="images/dev/hq-sw1-access-port.png" alt="HQ-SW1 console configuring interface Gi0/2 as an access port in VLAN 20 with portfast; IOS prints a warning that portfast should only be used on ports connected to a single host.">
+  <figcaption>Configuring Gi0/2 for the server VLAN.</figcaption>
+</figure>
+<p>Each PC port is set with <code>switchport mode access</code>. A new port defaults to "dynamic auto," which negotiates with whatever is plugged in (DTP), so a device pretending to be a switch could turn it into a trunk and reach every VLAN. Setting the mode myself closes that gap. Portfast skips Spanning Tree's roughly 30-second wait, which is safe for a single PC. The warning IOS prints is serious: portfast on a port that leads to another switch can cause a broadcast storm.</p>
+<figure>
+  <img src="images/dev/hq-sw1-switchport.png" alt="Output of show interfaces gi0/2 switchport: Administrative Mode static access, Negotiation of Trunking Off, Access Mode VLAN 20 (SERVERS).">
+  <figcaption>Verifying the port: static access, no negotiation, VLAN 20.</figcaption>
+</figure>
+<figure>
+  <img src="images/dev/hq-sw1-vlan-brief.png" alt="Output of show vlan brief: VLANs 10 USERS on Gi0/1, 20 SERVERS on Gi0/2, 40 GUEST on Gi0/3, with VLANs 30, 99 and 999 created but empty.">
+  <figcaption>Ports in their VLANs, before the trunk was configured.</figcaption>
+</figure>
+<p>Creating a VLAN and putting ports into it are separate steps. VLANs 30, 99, and 999 exist but have no ports yet. Gi0/0 still sits in VLAN 1 here because it hasn't become a trunk.</p>
+
+<h3>The trunk: many VLANs over one cable</h3>
+<figure>
+  <img src="images/dev/hq-sw1-trunk.png" alt="HQ-SW1 configuring Gi0/0 as an 802.1Q trunk with native VLAN 999 and allowed VLANs 10,20,30,40,99; show interface trunk confirms mode on, 802.1q, trunking, native VLAN 999.">
+  <figcaption>Gi0/0 trunk to HQ-R1.</figcaption>
+</figure>
+<p>The link to the router must carry every VLAN, so it is an 802.1Q trunk that tags each frame with its VLAN number. IOSvL2 also supports Cisco's older ISL tagging, so <code>encapsulation dot1q</code> must be chosen before the port can become a trunk. The allowed list is limited to the VLANs HQ actually uses, and <code>nonegotiate</code> turns off DTP. One lesson from this step: <code>switchport trunk allowed vlan</code> <em>replaces</em> the list instead of adding to it. Changes must use <code>add</code> or <code>remove</code>, or one command can cut every VLAN off from the router.</p>
+
+<h3>Management address on the switch</h3>
+<figure>
+  <img src="images/dev/hq-sw1-svi-vlan99.png" alt="HQ-SW1 creating interface Vlan99 with IP 10.1.99.2/24; log messages show the interface and line protocol changing to up.">
+  <figcaption>The VLAN 99 SVI comes up once a port carrying VLAN 99 is active.</figcaption>
+</figure>
+<p>A switch moves frames by MAC address and needs no IP address to do its job. It needs one so <em>I</em> can reach it over SSH and so the automation scripts can manage it. That address lives on a switch virtual interface (SVI) in the management VLAN. The SVI only came up after the trunk carrying VLAN 99 was active.</p>
+<figure>
+  <img src="images/dev/hq-sw1-ip-brief.png" alt="show ip interface brief on HQ-SW1: all physical ports unassigned and up, Vlan99 at 10.1.99.2 up/up.">
+  <figcaption>Vlan99 up at 10.1.99.2.</figcaption>
+</figure>
+
+<h3>Router-on-a-stick on HQ-R1</h3>
+<figure>
+  <img src="images/dev/hq-r1-basics.png" alt="HQ-R1 console: show ip interface brief shows every interface administratively down; then hostname, no ip domain-lookup, logging synchronous, and Gi0/1 configured with no ip address and no shutdown.">
+  <figcaption>Router ports start administratively down, unlike switch ports.</figcaption>
+</figure>
+<p>Switch ports are on by default, but router ports are off until an administrator enables them. The physical port Gi0/1 gets no IP address: it is only the "stick." Each VLAN gets a subinterface (Gi0/1.10, .20, .30, .40, .99) with <code>encapsulation dot1Q</code> matching the VLAN tag and the .1 address as that VLAN's default gateway.</p>
+<p>This step changed between the Packet Tracer practice build and the EVE-NG build. In Packet Tracer I created a subinterface for the native VLAN (Gi0/1.999). In EVE-NG I left it out on purpose: VLAN 999 has no devices, so untagged frames have no subinterface to handle them and the router drops them. No legitimate traffic should ever cross the trunk untagged, so dropping it is the safer design.</p>
+
+<h3>Test PCs</h3>
+<figure>
+  <img src="images/dev/vpcs-ip.png" alt="VPCS console: ip 10.1.10.10/24 10.1.10.1 sets the PC address and gateway.">
+  <figcaption>PC-USERS gets 10.1.10.10 with gateway 10.1.10.1.</figcaption>
+</figure>
+<p>The test PCs are VPCS nodes, minimal virtual PCs that can set an address, ping, and trace. Each PC's gateway is the router subinterface for its VLAN. In Module 3, the DHCP server replaces these static addresses.</p>
+<!-- TODO (optional): link the full Module 1 guide in your repo here -->
+    </section>
+
+    <section id="branch-wan">
+      <h2>Branch Office and WAN Routing (OSPF)</h2>
+<p><em>Status: next module to build.</em></p>
+<p>Module 2 adds the branch office (a router, a switch, and test PCs) and an ISP router between the two sites. Each WAN link is a /30 subnet, the same kind of link proven in Checkpoint 0. OSPF will run on all three routers, so each one learns the other offices' networks automatically instead of every route being typed by hand. The loopback addresses become the OSPF router IDs. Following Glenn's advice, branch internet traffic will be routed through HQ, which keeps security policy in one place.</p>
+<p>The planned checkpoint: a branch PC pings an HQ PC, <code>show ip ospf neighbor</code> shows a FULL adjacency on every link, and a trace shows the path through the ISP router.</p>
+    </section>
+
+    <section id="services">
+      <h2>Network Services: DHCP and DNS</h2>
+<p><em>Status: planned after Module 2.</em></p>
+<p>Module 3 adds a Linux server in the SERVERS VLAN (10.1.20.0/24) that hands out IP addresses (DHCP) and resolves names (DNS) for both offices. DHCP requests are broadcasts, and routers do not forward broadcasts, so each router subinterface will get an <code>ip helper-address</code> that relays requests to the server. The branch can then use a server at HQ. Replacing the static addresses on the test PCs with DHCP becomes the Module 3 checkpoint.</p>
+    </section>
+
+    <section id="automation">
+      <h2>Automation with Python and Netmiko</h2>
+<p><em>Status: in progress, starting with SSH access to the devices.</em></p>
+<p>The automation side uses Python with Netmiko, a library that logs in to network devices over SSH, sends commands, and returns the output for the script to read. The scripts will run on a Linux automation VM inside EVE-NG, connected to the management VLAN (99), so they reach every device the same way an administrator would.</p>
+<p>The first step is enabling SSH on each device: a domain name and RSA key, a local admin account, SSHv2 only, and SSH (not Telnet) on the virtual terminal lines. The planned scripts, in order:</p>
+<ul>
+  <li><strong>Show-command script:</strong> runs commands like <code>show ip interface brief</code> on every device and collects the output.</li>
+  <li><strong>Backup script:</strong> saves each device's running configuration to the GitHub repo, so any device can be restored.</li>
+  <li><strong>Check script:</strong> runs each module's checkpoint tests automatically (see Testing and Verification).</li>
+  <li><strong>Configuration script:</strong> pushes configurations to devices. In Survey #1, the stakeholder rated this the most useful feature.</li>
+</ul>
+<p>The automation VM sits in VLAN 99 and the test PCs sit in other VLANs, so a ping from the VM to a PC has to cross the router. That makes the VM a true test of inter-VLAN routing, not just of reachability.</p>
+    </section>
+
+    <section id="testing">
+      <h2>Testing and Verification</h2>
+<p>Every module ends with a checkpoint: a short set of tests with expected results written down <em>before</em> running them. If a checkpoint fails, the build doesn't move forward.</p>
+
+<h3>Checkpoint 1: inter-VLAN routing</h3>
+<figure>
+  <img src="images/dev/checkpoint1-ping-trace.png" alt="VPCS on PC-USERS: ping to gateway 10.1.10.1 replies with ttl=255; pings to 10.1.20.10 and 10.1.40.10 reply with ttl=63; trace to 10.1.20.10 shows hop 1 at 10.1.10.1 and hop 2 at 10.1.20.10.">
+  <figcaption>From PC-USERS (VLAN 10): gateway, server VLAN, guest VLAN, and a trace.</figcaption>
+</figure>
+<p>The TTL values prove the path, not just the connection. HQ-R1 creates its own replies with TTL 255, which is why the gateway answers with 255. VPCS starts packets at TTL 64, and each router a packet crosses subtracts one, so replies from PCs in other VLANs arriving with TTL 63 crossed exactly one router. The trace confirms it: hop 1 is the gateway, hop 2 the destination. The "Destination port unreachable" on the last hop is normal. VPCS traces to an unused port, and that reply is how trace knows it reached the end. Two PCs on the same switch still go through the router because different VLANs are separate networks.</p>
+
+<h3>Breaking it on purpose</h3>
+<figure>
+  <img src="images/dev/break-it-trunk-config.png" alt="HQ-SW1: switchport trunk allowed vlan remove 20 on Gi0/0, then switchport trunk allowed vlan add 20 to restore it.">
+  <figcaption>Removing VLAN 20 from the trunk, then restoring it.</figcaption>
+</figure>
+<figure>
+  <img src="images/dev/break-it-results.png" alt="PC-USERS pings: 10.1.20.10 times out, 10.1.40.10 still replies with ttl=63, 10.1.20.10 times out again, then replies with ttl=63 after VLAN 20 is restored.">
+  <figcaption>Only VLAN 20 traffic fails, and it recovers once restored.</figcaption>
+</figure>
+<p>A test plan should show that the tests can catch real faults, not only that the network works. Removing VLAN 20 from the trunk's allowed list made pings to the server VLAN time out while the guest VLAN kept working. That's exactly the predicted failure, and it is the same trunk mistake described in the HQ section. Adding VLAN 20 back restored the pings.</p>
+
+<h3>Test plan going forward</h3>
+<p>My instructor's review of the design spec called the original test plan thin, so it now covers three kinds of tests:</p>
+<ul>
+  <li><strong>Normal use:</strong> each module's checkpoint (inter-VLAN pings, OSPF neighbors, DHCP leases, DNS lookups).</li>
+  <li><strong>Bad input and edge cases:</strong> scripts given a wrong IP address, an invalid VLAN, a wrong password, or a powered-off device should report a clear error instead of crashing.</li>
+  <li><strong>Breaking things on purpose:</strong> shutting down a WAN link or a switch to confirm the check script detects it, then restoring it.</li>
+</ul>
+<p>The check script will turn these manual checkpoints into one command that can run after every change.</p>
+    </section>
+
+    <section id="feedback">
+      <h2>Stakeholder and Expert Feedback</h2>
+<h3>Expert: Glenn</h3>
+<p>The first expert meeting changed the project more than any other event. Glenn moved the lab to EVE-NG, supplied the Cisco images that kept the project on real Cisco software, offered remote help when I get stuck, and added a security track (ACLs, branch firewall, VPNs) that matches my goal of becoming a network or network security engineer.</p>
+<!-- TODO: add notes from expert meeting #2 when it happens -->
+
+<h3>Stakeholders</h3>
+<p>Rene Gomez (CSS IT) agreed to be my first stakeholder, and Stakeholder Survey #1 went out to CSS IT and North Seattle College IT. <!-- TODO: confirm the survey actually reached North Seattle College IT; if not, change this sentence --> The survey asks which group the respondent is in, how useful each planned feature would be, which two features matter most, and how the lab should be taught.</p>
+<!-- TODO: add a screenshot of the survey form -->
+<p>One response has come in so far, from a CSS IT staff member with more than ten years of experience who works with every technology in the lab. Their answers shaped the plan:</p>
+<ul>
+  <li><strong>Top two features: configuration scripts and the monitoring dashboard</strong> (both rated 5/5). The configuration script has been added to the automation plan, and the dashboard stays in the second quarter.</li>
+  <li><strong>Setup time matters.</strong> They agreed that a lab taking more than an hour to set up is too much effort. That makes the README setup guide and automated configuration more important.</li>
+  <li><strong>The hardest part of troubleshooting is "figuring out what's causing the problem."</strong> Every module guide therefore ends with a symptom → likely cause → fix table.</li>
+  <li><strong>Missing from the design:</strong> redundancy, failover, and disaster recovery, which are now candidates for next quarter.</li>
+  <li><strong>All instruction formats were wanted:</strong> written guides, screenshots, video, diagrams with addressing tables, and configs to compare against.</li>
+</ul>
+<p>One response is not enough to generalize from, so collecting more responses, and the Survey #2 demo feedback, is part of the next steps.</p>
+
+<h3>Instructor and classmates</h3>
+<p>A classmate's Standup 1 suggestion made FRRouting my backup platform. My instructor's review of the spec led to the expanded test plan, and her point that professionals ask for the resources they need, instead of staying stuck, changed how I handle blockers.</p>
+    </section>
+
+    <section id="schedule">
+      <h2>Planning and Schedule</h2>
+<p>The design spec laid out a week-by-week schedule for the whole quarter, with a module finishing almost every week. The lab platform problems pushed the first EVE-NG build from Week 4 to Week 7, which made the rest of that schedule unrealistic.</p>
+<p>I switched to rolling one-week sprints on a GitHub Projects board, planning only the next week until I knew my real pace. Each weekly status report closes one sprint and plans the next. Work that doesn't fit moves forward deliberately instead of piling up. The project has logged about 15 hours a week, and as of Week 8 it is about two weeks behind the original plan. Finishing the core network this quarter and moving security and monitoring to next quarter is how I'm closing that gap.</p>
+<!-- TODO: add a screenshot of your GitHub Projects board, and optionally a small table of original vs. actual week for each module -->
+    </section>
+
+    <section id="next-steps">
+      <h2>Next Steps</h2>
+<p>This quarter built the foundation: a working lab platform and a verified HQ network. The plan from here:</p>
+<ul>
+  <li><strong>Rest of this quarter:</strong> build Module 2 (branch office, ISP router, OSPF), enable SSH, and set up the automation VM.</li>
+  <li><strong>Next quarter, build out:</strong> Module 3 (DHCP and DNS), the Netmiko scripts (show, backup, check, and configure), and step-by-step guides for each module.</li>
+  <li><strong>Next quarter, secure and monitor:</strong> ACLs between VLANs, the ASAv firewall at the branch, site-to-site and remote-access VPNs, and the monitoring dashboard.</li>
+  <li><strong>Measure success:</strong> time manual configuration against the scripts, have someone else rebuild the lab from the README, and run Survey #2 with a demo.</li>
+</ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">CSS 497 Capstone · UW · 2026–2027 · <a href="index.html">Capstone home</a></div>
+  </footer>
 </body>
 </html>
