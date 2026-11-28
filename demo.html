@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo: HQ Network in Action | Daniel Admassu – Capstone</title>
+  <style>
+    :root { --text:#1a1a1a; --bg:#ffffff; --accent:#4b2e83; --muted:#555; --line:#d6d6d6; --code-bg:#f2f2f2; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; font-size:1.0625rem; line-height:1.65; color:var(--text); background:var(--bg); }
+    .skip-link { position:absolute; left:-999px; top:0; background:var(--accent); color:#fff; padding:.5rem 1rem; z-index:10; }
+    .skip-link:focus { left:0; }
+    header { background:var(--accent); color:#fff; }
+    .header-inner, main, footer .footer-inner { max-width:56rem; margin:0 auto; padding:0 1.25rem; }
+    .site-name { display:block; padding:1rem 0 .5rem; color:#fff; font-weight:700; font-size:1.15rem; text-decoration:none; }
+    header nav ul { list-style:none; margin:0; padding:0 0 .75rem; display:flex; flex-wrap:wrap; gap:.25rem 1.25rem; }
+    header nav a { color:#fff; text-decoration:none; padding:.25rem 0; border-bottom:3px solid transparent; }
+    header nav a:hover, header nav a:focus { border-bottom-color:#fff; }
+    header nav a[aria-current="page"] { border-bottom-color:#b7a57a; font-weight:700; }
+    main { padding-top:2rem; padding-bottom:3rem; }
+    h1 { font-size:2.25rem; line-height:1.2; margin:0 0 .5rem; color:var(--accent); }
+    .intro { font-size:1.2rem; color:var(--muted); margin-top:0; }
+    h2 { font-size:1.6rem; color:var(--accent); margin:3rem 0 .75rem; padding-bottom:.35rem; border-bottom:2px solid var(--line); }
+    h3 { font-size:1.2rem; margin:2rem 0 .5rem; }
+    .toc { background:#f7f5fb; border-left:4px solid var(--accent); padding:1rem 1.5rem; margin:1.5rem 0 2rem; }
+    .toc h2 { margin:0 0 .5rem; font-size:1.15rem; border:0; padding:0; }
+    .toc ol { margin:0; padding-left:1.25rem; }
+    a { color:var(--accent); }
+    code { background:var(--code-bg); padding:.1rem .35rem; border-radius:3px; font-size:.92em; }
+    figure { margin:1.5rem 0; }
+    figure img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:4px; display:block; }
+    figcaption { font-size:.92rem; color:var(--muted); margin-top:.4rem; font-style:italic; }
+    table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.95rem; }
+    th, td { border:1px solid var(--line); padding:.45rem .65rem; text-align:left; }
+    th { background:#f7f5fb; }
+    footer { border-top:1px solid var(--line); color:var(--muted); font-size:.92rem; }
+    footer .footer-inner { padding-top:1.25rem; padding-bottom:1.25rem; }
+      .annotation { margin-bottom:.75rem; }
+    ul.bib { list-style:none; padding-left:0; }
+    ul.bib li { padding-left:2em; text-indent:-2em; margin-bottom:.6rem; overflow-wrap:anywhere; }
+    pre { background:#f2f2f2; padding:1rem; overflow-x:auto; border-radius:4px; font-size:.9rem; line-height:1.4; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <div class="header-inner">
+      <a class="site-name" href="index.html">Daniel Admassu · Virtual Enterprise Network</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Capstone</a></li>
+          <li><a href="users-perspective.html">User's Perspective</a></li>
+          <li><a href="developers-perspective.html">Developer's Perspective</a></li>
+          <li><a href="my-perspective.html">My Perspective</a></li>
+          <li><a href="annotated-bibliography.html">Annotated Bibliography</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <h1>Demo: HQ Network in Action</h1>
+    <p class="intro">A step-by-step look at the working headquarters network and the tests that prove it works.</p>
+
+    <nav class="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#network">The Network</a></li>
+        <li><a href="#vlans">Step 1: Separate the Devices into VLANs</a></li>
+        <li><a href="#trunk">Step 2: Carry Every VLAN to the Router</a></li>
+        <li><a href="#management">Step 3: Give the Switch a Management Address</a></li>
+        <li><a href="#routing">Step 4: Route Between the VLANs</a></li>
+        <li><a href="#testing">Step 5: Test It</a></li>
+        <li><a href="#break-it">Step 6: Break It on Purpose</a></li>
+        <li><a href="#next">What's Next</a></li>
+      </ol>
+    </nav>
+
+    <section id="network">
+      <h2>The Network</h2>
+<p>This demo walks through the headquarters (HQ) network I built in EVE-NG with real Cisco router and switch software, and the tests that prove it works. It takes about 5 minutes to read. Each step shows the actual output from the lab.</p>
+<p>The HQ network has one router (HQ-R1), one switch (HQ-SW1), and test PCs in three different VLANs. The switch keeps the VLANs separate, and the router connects them, so each group of devices is its own network but they can still reach each other when they need to.</p>
+<pre aria-label="Text diagram: HQ-R1 connects to HQ-SW1 over one 802.1Q trunk; HQ-SW1 connects to PC-USERS in VLAN 10, PC-SERVERS in VLAN 20, and PC-GUEST in VLAN 40.">
+                 HQ-R1  (router)
+                   |
+                   |  one cable carrying all VLANs (802.1Q trunk)
+                   |
+                 HQ-SW1 (switch)
+         ___________|___________
+        |           |           |
+    PC-USERS   PC-SERVERS   PC-GUEST
+    VLAN 10     VLAN 20     VLAN 40
+  10.1.10.10  10.1.20.10  10.1.40.10
+</pre>
+<!-- TODO (optional): replace or add a screenshot of the Module1-HQ topology in EVE-NG -->
+    </section>
+
+    <section id="vlans">
+      <h2>Step 1: Separate the Devices into VLANs</h2>
+<figure>
+  <img src="images/dev/hq-sw1-vlan-brief.png" alt="Output of show vlan brief on HQ-SW1: VLAN 10 USERS on port Gi0/1, VLAN 20 SERVERS on Gi0/2, VLAN 40 GUEST on Gi0/3; VLANs 30 VOICE, 99 MGMT and 999 NATIVE exist with no ports yet.">
+  <figcaption>Each PC port is assigned to one VLAN.</figcaption>
+</figure>
+<p>The switch is divided into VLANs: users, servers, voice, guests, and management. Each PC is plugged into a port that belongs to exactly one VLAN, so a visitor on the guest network is on a different network from the company's servers, even though they share the same switch.</p>
+<figure>
+  <img src="images/dev/hq-sw1-switchport.png" alt="Output of show interfaces gi0/2 switchport: Administrative Mode static access, Negotiation of Trunking Off, Access Mode VLAN 20 (SERVERS).">
+  <figcaption>Port Gi0/2 is locked to the server VLAN.</figcaption>
+</figure>
+<p>Each port's mode is set by hand ("static access"), with negotiation turned off. Otherwise, a device pretending to be a switch could trick the port into giving it access to every VLAN.</p>
+    </section>
+
+    <section id="trunk">
+      <h2>Step 2: Carry Every VLAN to the Router</h2>
+<figure>
+  <img src="images/dev/hq-sw1-trunk.png" alt="HQ-SW1 configuring Gi0/0 as a trunk; show interface trunk confirms mode on, 802.1q encapsulation, status trunking, native VLAN 999, allowed VLANs 10,20,30,40,99.">
+  <figcaption>The trunk to the router: 802.1Q, native VLAN 999, five allowed VLANs.</figcaption>
+</figure>
+<p>The router needs to reach every VLAN, but it only has one cable to the switch. That cable is a <strong>trunk</strong>: each frame gets a small tag saying which VLAN it belongs to. Two security choices are visible here: only the VLANs HQ actually uses are allowed, and the "native" VLAN (whose traffic travels untagged) is moved to VLAN 999, which has no devices on it.</p>
+    </section>
+
+    <section id="management">
+      <h2>Step 3: Give the Switch a Management Address</h2>
+<figure>
+  <img src="images/dev/hq-sw1-ip-brief.png" alt="show ip interface brief on HQ-SW1: physical ports have no IP address; interface Vlan99 has 10.1.99.2 and is up/up.">
+  <figcaption>The switch is reachable at 10.1.99.2 on the management VLAN.</figcaption>
+</figure>
+<p>A switch doesn't need an IP address to do its job, but administrators and automation scripts need one to log in to it. The management address lives on VLAN 99, apart from user traffic. This is the address the Python scripts will use in the next phase of the project.</p>
+    </section>
+
+    <section id="routing">
+      <h2>Step 4: Route Between the VLANs</h2>
+<p>On the router, the single trunk port is split into <strong>subinterfaces</strong>, one per VLAN. Each subinterface handles only frames tagged with its VLAN and acts as that VLAN's default gateway (10.1.10.1 for users, 10.1.20.1 for servers, and so on). Using one router port this way is called <em>router-on-a-stick</em>.</p>
+<!-- TODO: add a screenshot of "show ip interface brief" on HQ-R1 showing Gi0/1.10, .20, .30, .40 and .99 up/up, saved as images/dev/hq-r1-subinterfaces.png, then uncomment:
+<figure>
+  <img src="images/dev/hq-r1-subinterfaces.png" alt="show ip interface brief on HQ-R1: subinterfaces Gi0/1.10, .20, .30, .40 and .99 with addresses 10.1.10.1, 10.1.20.1, 10.1.30.1, 10.1.40.1 and 10.1.99.1, all up/up.">
+  <figcaption>One subinterface per VLAN, each with its gateway address.</figcaption>
+</figure>
+-->
+<figure>
+  <img src="images/dev/vpcs-ip.png" alt="VPCS console: the command ip 10.1.10.10/24 10.1.10.1 sets the PC address to 10.1.10.10 with gateway 10.1.10.1.">
+  <figcaption>PC-USERS uses the router's VLAN 10 subinterface as its gateway.</figcaption>
+</figure>
+    </section>
+
+    <section id="testing">
+      <h2>Step 5: Test It</h2>
+<figure>
+  <img src="images/dev/checkpoint1-ping-trace.png" alt="PC-USERS pings its gateway 10.1.10.1 with replies at ttl=255; pings 10.1.20.10 and 10.1.40.10 with replies at ttl=63; trace to 10.1.20.10 shows hop 1 at 10.1.10.1 and hop 2 at 10.1.20.10.">
+  <figcaption>From the users VLAN: the gateway, the server VLAN, the guest VLAN, and a trace.</figcaption>
+</figure>
+<p>A PC in the users VLAN can reach its gateway, a server in VLAN 20, and a guest PC in VLAN 40. Two details prove the traffic really goes through the router:</p>
+<ul>
+  <li><strong>The TTL numbers.</strong> Every router a packet passes through lowers its TTL by 1. The PCs start at 64, so replies from other VLANs arriving with <strong>63</strong> crossed exactly one router. The gateway answers with 255 because the router creates its own replies.</li>
+  <li><strong>The trace.</strong> Hop 1 is the router (10.1.10.1), and hop 2 is the server. The "port unreachable" message on the last hop is normal: it's how trace knows it arrived.</li>
+</ul>
+    </section>
+
+    <section id="break-it">
+      <h2>Step 6: Break It on Purpose</h2>
+<figure>
+  <img src="images/dev/break-it-trunk-config.png" alt="HQ-SW1: the command switchport trunk allowed vlan remove 20 on interface Gi0/0, followed later by switchport trunk allowed vlan add 20.">
+  <figcaption>Removing the server VLAN from the trunk, then putting it back.</figcaption>
+</figure>
+<figure>
+  <img src="images/dev/break-it-results.png" alt="PC-USERS pings: 10.1.20.10 times out, 10.1.40.10 still replies, 10.1.20.10 times out again, then 10.1.20.10 replies with ttl=63 after VLAN 20 is restored.">
+  <figcaption>Only the server VLAN fails, and it recovers when restored.</figcaption>
+</figure>
+<p>Good tests should catch real mistakes, not just confirm that things work. Here, the server VLAN is removed from the trunk, which is a common real-world misconfiguration. Pings to the server VLAN fail while the guest VLAN keeps working, which is exactly the predicted result. Adding VLAN 20 back restores the connection.</p>
+    </section>
+
+    <section id="next">
+      <h2>What's Next</h2>
+<p>Every step above comes from the Module 1 build guide, which explains each command line by line and ends with a troubleshooting table. Coming next:</p>
+<ul>
+  <li>A branch office connected through a simulated internet provider, with OSPF routing between the offices</li>
+  <li>A Linux server providing DHCP and DNS for both offices</li>
+  <li>Python scripts that configure, back up, and automatically test the network</li>
+  <li>Next quarter: firewall, access control lists, VPNs, and a monitoring dashboard</li>
+</ul>
+<p><strong>Thank you for reading! Please share your feedback in the survey: <a href="SURVEY_LINK_HERE">Stakeholder Survey #2</a>.</strong></p>
+<!-- TODO: replace SURVEY_LINK_HERE with your Google Form link. Optionally link the Module 1 guide in your repo above. -->
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">CSS 497 Capstone · UW · 2026–2027 · <a href="index.html">Capstone home</a></div>
+  </footer>
+</body>
+</html>
